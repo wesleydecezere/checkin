@@ -1,0 +1,15 @@
+mutation CreatePupil($pupilInput: PupilInput!) {
+    createPupil(pupil: $pupilInput) {
+        id
+        name
+    }
+}
+
+#{
+#    "pupilInput": {
+#        "name": "césar",
+#        "belt": "WHITE",
+#        "grade": 1,
+#        "active": true
+#    }
+#}

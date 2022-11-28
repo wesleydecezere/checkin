@@ -1,0 +1,6 @@
+query Pupil($id: ID) {
+    pupil(id: $id) {
+        id
+        name
+    }
+}

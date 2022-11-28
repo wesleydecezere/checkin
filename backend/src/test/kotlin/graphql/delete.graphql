@@ -1,0 +1,3 @@
+mutation DeletePupilById($id: ID) {
+    deletePupilById(id: $id)
+}

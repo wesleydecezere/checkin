@@ -1,0 +1,33 @@
+enum BeltEnum {
+    WHITE,
+    BLUE,
+    PURPLE,
+    BROWN,
+    BLACK
+}
+
+input PupilInput {
+    name: String!
+    belt: BeltEnum!
+    grade: Int!
+    active: Boolean
+}
+
+type Pupil  {
+    id: ID!
+    name: String!
+    belt: BeltEnum!
+    grade: Int!
+    active: Boolean!
+}
+
+type Query {
+    pupils: [Pupil]!
+    pupil(id: ID): Pupil
+}
+
+type Mutation {
+    createPupil(pupil: PupilInput!): Pupil!
+    deletePupilById(id: ID): Boolean!
+    updatePupilById(id: ID!, pupil: PupilInput!): Pupil
+}

@@ -1,0 +1,16 @@
+mutation UpdatePupil($id: ID!, $input: PupilInput!) {
+    updatePupilById(id: $id, pupil: $input) {
+        id
+        name
+    }
+}
+
+#{
+#    "id": 1,
+#    "input": {
+#    "name": "césar",
+#    "belt": "WHITE",
+#    "grade": 2,
+#    "active": true
+#    }
+#}
