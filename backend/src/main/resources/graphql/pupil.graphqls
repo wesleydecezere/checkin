@@ -21,13 +21,33 @@ type Pupil  {
     active: Boolean!
 }
 
+type Event {
+    id: ID!
+}
+
+input CheckinInput {
+    eventId: ID!
+    participantId: ID!
+}
+
+type Checkin {
+    id: ID!
+    eventId: ID!
+    participantId: ID!
+}
+
 type Query {
     pupils: [Pupil]!
     pupil(id: ID): Pupil
+
+    events: [Event]!
+    checkins: [Checkin]!
 }
 
 type Mutation {
     createPupil(pupil: PupilInput!): Pupil!
     deletePupilById(id: ID): Boolean!
     updatePupilById(id: ID!, pupil: PupilInput!): Pupil
+
+    createCheckin(checkin: CheckinInput!): Checkin!
 }

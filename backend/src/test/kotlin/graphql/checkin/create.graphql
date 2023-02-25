@@ -1,0 +1,12 @@
+mutation CreateCheckin($checkinInput: CheckinInput!) {
+    createCheckin(checkin: $checkinInput) {
+        id
+    }
+}
+
+#{
+#   "checkinInput": {
+#       "eventId": "1",
+#       "participantId": "1"
+#   }
+#}
