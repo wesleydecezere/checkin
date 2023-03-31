@@ -1,14 +1,13 @@
-import React from "react";
 import { Select } from "native-base";
 import { useQuery } from "@apollo/client";
-import { GET_EVENTS } from "../../graphql/queries";
+import { AllEventsDocument } from "../../gql/graphql";
 
 interface SelectEventProps {
   setEventId: (eventId?: string) => void;
 }
 
 export function SelectEvent({ setEventId }: SelectEventProps) {
-  const { loading, error, data } = useQuery(GET_EVENTS);
+  const { loading, error, data } = useQuery(AllEventsDocument);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
@@ -19,7 +18,7 @@ export function SelectEvent({ setEventId }: SelectEventProps) {
       onValueChange={(id) => setEventId(id === "" ? undefined : id)}
     >
       <Select.Item label={""} value={""} />
-      {data.events.map(
+      {data?.events.map(
         (
           { id }: any // TODO: add Event type
         ) => (

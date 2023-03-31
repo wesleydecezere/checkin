@@ -1,7 +1,7 @@
 // TODO: evoluir pra table
 import { FlatList, Heading, ScrollView, VStack, Text } from "native-base";
 import { useQuery } from "@apollo/client";
-import { GET_CHECKINS } from "../../graphql/queries";
+import { AllCheckinsDocument } from "../../gql/graphql";
 
 // TODO: add Checkin type
 const renderItem = ({ item }: any) => (
@@ -11,7 +11,7 @@ const renderItem = ({ item }: any) => (
 );
 
 export function CheckinList() {
-  const { loading, error, data } = useQuery(GET_CHECKINS);
+  const { loading, error, data } = useQuery(AllCheckinsDocument);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
@@ -20,7 +20,7 @@ export function CheckinList() {
     <VStack space="2.5" h="60vh" mb="4">
       <Heading>Lista de checkins</Heading>
       <ScrollView>
-        <FlatList data={data.checkins} renderItem={renderItem} />
+        <FlatList data={data?.checkins} renderItem={renderItem} />
       </ScrollView>
     </VStack>
   );

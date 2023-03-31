@@ -20,14 +20,14 @@
     "react-native-svg": "^12.5.1",
     "react-native-web": "^0.17.7",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start && graphql-codegen --config codegen.ts --watch",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "eslintConfig": {
     "extends": [
@@ -46,5 +46,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^3.2.2",
+    "@graphql-codegen/client-preset": "^2.1.1",
+    "@types/graphql": "^14.5.0",
+    "apollo": "^2.34.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
   }
 }

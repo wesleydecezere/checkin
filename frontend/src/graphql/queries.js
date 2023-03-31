@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const GET_EVENTS = gql`
-  query {
+  query AllEvents {
     events {
       id
     }
@@ -9,7 +9,7 @@ export const GET_EVENTS = gql`
 `;
 
 export const GET_PUPILS = gql`
-  query {
+  query AllPupils {
     pupils {
       id
       name
@@ -19,7 +19,7 @@ export const GET_PUPILS = gql`
 `;
 
 export const GET_CHECKINS = gql`
-  query {
+  query AllCheckins {
     checkins {
       id
       eventId
