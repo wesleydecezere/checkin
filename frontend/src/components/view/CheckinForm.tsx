@@ -6,16 +6,20 @@ import { useMutation } from "@apollo/client";
 import { ADD_CHECKIN } from "../../graphql/mutations";
 import { GET_CHECKINS } from "../../graphql/queries";
 
-export function CheckinForm({ setIsAlertDialogOpen }) {
-  const [eventId, setEventId] = useState();
-  const [participantId, setParticipantId] = useState();
+interface CheckinFormProps {
+  setIsAlertDialogOpen: (isOpen: boolean) => void;
+}
+
+export function CheckinForm({ setIsAlertDialogOpen }: CheckinFormProps) {
+  const [eventId, setEventId] = useState<string>();
+  const [participantId, setParticipantId] = useState<string>();
 
   const [addCheckin, { data, loading, error }] = useMutation(ADD_CHECKIN, {
     refetchQueries: [{ query: GET_CHECKINS }],
   });
 
-  if (loading) return "Submitting...";
-  if (error) return `Submission error! ${error.message}`;
+  if (loading) return <>"Submitting...";</>;
+  if (error) return <>`Submission error! ${error.message}`;</>;
 
   const input = {
     variables: {
@@ -31,8 +35,8 @@ export function CheckinForm({ setIsAlertDialogOpen }) {
       setIsAlertDialogOpen(true);
     } else {
       addCheckin(input);
-      setEventId(null);
-      setParticipantId(null);
+      setEventId(undefined);
+      setParticipantId(undefined);
     }
   };
 

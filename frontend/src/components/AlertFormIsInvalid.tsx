@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import { AlertDialog } from "native-base";
 
-export function AlertFormIsInvalid({ isOpen, setIsOpen }) {
+interface AlertFormIsInvalidProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+export function AlertFormIsInvalid({
+  isOpen,
+  setIsOpen,
+}: AlertFormIsInvalidProps) {
+  const ref = useRef();
+
   return (
-    <AlertDialog isOpen={isOpen}>
+    <AlertDialog isOpen={isOpen} leastDestructiveRef={ref}>
       <AlertDialog.Content>
         <AlertDialog.CloseButton onPress={() => setIsOpen(false)} />
         <AlertDialog.Header>Atenção</AlertDialog.Header>
