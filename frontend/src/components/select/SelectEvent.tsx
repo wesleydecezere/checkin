@@ -1,6 +1,6 @@
 import { Select } from "native-base";
 import { useQuery } from "@apollo/client";
-import { AllEventsDocument } from "../../gql/graphql";
+import { AllEventsDocument, Event, Maybe } from "../../gql/graphql";
 
 interface SelectEventProps {
   setEventId: (eventId?: string) => void;
@@ -18,13 +18,12 @@ export function SelectEvent({ setEventId }: SelectEventProps) {
       onValueChange={(id) => setEventId(id === "" ? undefined : id)}
     >
       <Select.Item label={""} value={""} />
-      {data?.events.map(
-        (
-          { id }: any // TODO: add Event type
-        ) => (
-          <Select.Item key={id} label={`Evento ${id}`} value={id} />
-        )
-      )}
+      {data?.events?.map((event: Maybe<Event>) => {
+        if (!event) return null;
+
+        const { id } = event;
+        return <Select.Item key={id} label={`Evento ${id}`} value={id} />;
+      })}
     </Select>
   );
 }

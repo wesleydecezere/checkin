@@ -13,7 +13,7 @@ class LocalCorsConfiguration {
         val source = UrlBasedCorsConfigurationSource()
         val config = CorsConfiguration()
         config.allowCredentials = true
-        config.addAllowedOrigin("http://localhost:3000")
+        config.addAllowedOrigin("http://localhost:3003")
         config.addAllowedHeader("*")
         config.addAllowedMethod("*")
         source.registerCorsConfiguration("/graphql/**", config)

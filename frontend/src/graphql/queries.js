@@ -14,6 +14,8 @@ export const GET_PUPILS = gql`
       id
       name
       grade
+      belt
+      active
     }
   }
 `;

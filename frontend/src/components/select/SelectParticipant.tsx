@@ -1,6 +1,6 @@
 import { Select } from "native-base";
 import { useQuery } from "@apollo/client";
-import { AllPupilsDocument, Pupil } from "../../gql/graphql";
+import { AllPupilsDocument, Maybe, Pupil } from "../../gql/graphql";
 
 interface SelectParticipantProps {
   setParticipantId: (participantId?: string) => void;
@@ -20,13 +20,12 @@ export function SelectParticipant({
       onValueChange={(id) => setParticipantId(id === "" ? undefined : id)}
     >
       <Select.Item label={""} value={""} />
-      {data?.pupils.map(
-        (
-          { id, name }: any // TODO: add Participant type
-        ) => (
-          <Select.Item key={id} label={name} value={id} />
-        )
-      )}
+      {data?.pupils?.map((pupil: Maybe<Pupil>) => {
+        if (!pupil) return null;
+
+        const { id, name } = pupil;
+        return <Select.Item key={id} label={name} value={id} />;
+      })}
     </Select>
   );
 }
