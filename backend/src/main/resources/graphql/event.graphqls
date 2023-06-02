@@ -1,0 +1,7 @@
+type Event {
+    id: ID!
+}
+
+extend type Query {
+    events: [Event]!
+}

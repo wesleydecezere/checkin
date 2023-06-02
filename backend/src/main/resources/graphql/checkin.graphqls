@@ -1,0 +1,18 @@
+input CheckinInput {
+    eventId: ID!
+    participantId: ID!
+}
+
+type Checkin {
+    id: ID!
+    eventId: ID!
+    participantId: ID!
+}
+
+extend type Query {
+    checkins: [Checkin]!
+}
+
+extend type Mutation {
+    createCheckin(checkin: CheckinInput!): Checkin!
+}
