@@ -1,12 +1,14 @@
 mutation CreateCheckin($checkinInput: CheckinInput!) {
     createCheckin(checkin: $checkinInput) {
         id
+        date
     }
 }
 
 #{
 #   "checkinInput": {
 #       "eventId": "1",
-#       "participantId": "1"
+#       "participantId": "2",
+#       "date": "2023-06-02T20:51:00.400588Z"
 #   }
 #}

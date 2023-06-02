@@ -28,6 +28,7 @@ export function CheckinForm({ setIsAlertDialogOpen }: CheckinFormProps) {
       const input: CheckinInput = {
         eventId: eventId,
         participantId: participantId,
+        date: new Date(),
       };
 
       addCheckin({ variables: { checkinInput: input } });

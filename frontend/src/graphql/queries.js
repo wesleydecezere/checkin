@@ -4,6 +4,7 @@ export const GET_EVENTS = gql`
   query AllEvents {
     events {
       id
+      date
     }
   }
 `;
@@ -26,6 +27,7 @@ export const GET_CHECKINS = gql`
       id
       eventId
       participantId
+      date
     }
   }
 `;

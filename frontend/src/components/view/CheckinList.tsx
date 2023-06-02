@@ -9,11 +9,11 @@ import { css } from "@emotion/native";
 const renderItem = ({ item }: ListRenderItemInfo<Maybe<Checkin>>) => {
   if (!item) return null;
 
-  const { id, eventId, participantId } = item;
+  const { id, eventId, participantId, date } = item;
 
   return (
     <Text>
-      ID-{id} | Evento {eventId} - Participante {participantId}
+      ID-{id} | Evento {eventId} - Participante {participantId} - Data: {date}
     </Text>
   );
 };

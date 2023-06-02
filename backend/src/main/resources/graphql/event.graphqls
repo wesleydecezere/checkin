@@ -1,5 +1,8 @@
+scalar Date
+
 type Event {
     id: ID!
+    date: Date!
 }
 
 extend type Query {

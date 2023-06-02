@@ -1,5 +1,6 @@
 package space.wad.checkin.backend.model
 
+import java.util.Date
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -14,5 +15,5 @@ class Checkin(
     @Id @GeneratedValue(strategy = IDENTITY) private val id: Long?,
     @Column(nullable = false) private val eventId: Long,
     @Column(nullable = false) private val participantId: Long,
-    // @Column(nullable = true) private val date: Date?
+    @Column(nullable = true) private val date: Date
 )

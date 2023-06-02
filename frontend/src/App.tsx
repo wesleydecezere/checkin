@@ -10,7 +10,7 @@ export function App() {
   return (
     <NativeBaseProvider>
       <Center h="100%" justifyContent="center">
-        <VStack h="100%">
+        <VStack h="100%" w={"xs"}>
           <CheckinForm setIsAlertDialogOpen={setIsAlertDialogOpen} />
           <Spacer />
           <CheckinList />

@@ -1,12 +1,17 @@
+scalar Date
+scalar DateTime
+
 input CheckinInput {
     eventId: ID!
     participantId: ID!
+    date: Date!
 }
 
 type Checkin {
     id: ID!
     eventId: ID!
     participantId: ID!
+    date: Date!
 }
 
 extend type Query {
