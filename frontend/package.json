@@ -1,0 +1,60 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.7.11",
+    "@emotion/native": "^11.11.0",
+    "@emotion/react": "^11.11.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.23",
+    "@types/react": "^17.0.55",
+    "@types/react-dom": "^17.0.19",
+    "@types/react-native": "^0.65.30",
+    "graphql": "^16.6.0",
+    "native-base": "^3.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native-safe-area-context": "^3.4.1",
+    "react-native-svg": "^12.5.1",
+    "react-native-web": "^0.17.7",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "PORT=3003 react-scripts start && graphql-codegen --config codegen.ts --watch",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^3.2.2",
+    "@graphql-codegen/client-preset": "^2.1.1",
+    "@types/graphql": "^14.5.0",
+    "apollo": "^2.34.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}

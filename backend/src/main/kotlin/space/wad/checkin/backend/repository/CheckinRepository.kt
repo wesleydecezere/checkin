@@ -2,7 +2,7 @@ package space.wad.checkin.backend.repository
 
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
-import space.wad.checkin.backend.model.Pupil
+import space.wad.checkin.backend.model.Checkin
 
 @Repository
-interface PupilRepository : JpaRepository<Pupil, Long> {}
+interface CheckinRepository : JpaRepository<Checkin, Long> {}
