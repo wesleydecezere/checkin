@@ -38,7 +38,7 @@ export function CheckinForm({ setIsAlertDialogOpen }: CheckinFormProps) {
   };
 
   return (
-    <VStack space="2.5" mt="4" w={"xs"}>
+    <VStack space="2.5" mt="4">
       <Heading>Checkin</Heading>
       <SelectEvent setEventId={setEventId} />
       <SelectParticipant setParticipantId={setParticipantId} />
