@@ -10,7 +10,7 @@ export function SelectEvent({ setEventId }: SelectEventProps) {
   const { loading, error, data } = useQuery(AllEventsDocument);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error : {error.message}</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <Select

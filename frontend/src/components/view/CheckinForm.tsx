@@ -21,9 +21,6 @@ export function CheckinForm({ setIsAlertDialogOpen }: CheckinFormProps) {
     refetchQueries: [{ query: AllCheckinsDocument }],
   });
 
-  if (loading) return <>"Submitting...";</>;
-  if (error) return <>`Submission error! ${error.message}`;</>;
-
   const handleSubmit = () => {
     if (eventId === undefined || participantId === undefined) {
       setIsAlertDialogOpen(true);
@@ -40,11 +37,13 @@ export function CheckinForm({ setIsAlertDialogOpen }: CheckinFormProps) {
   };
 
   return (
-    <VStack space="2.5" mt="4">
+    <VStack space="2.5" mt="4" w={"xs"}>
       <Heading>Checkin</Heading>
       <SelectEvent setEventId={setEventId} />
       <SelectParticipant setParticipantId={setParticipantId} />
       <Button onPress={handleSubmit}>Confirmar</Button>
+      {loading && <p>"Submitting..."</p>}
+      {error && <p>{error.message}</p>}
     </VStack>
   );
 }

@@ -12,7 +12,7 @@ export function SelectParticipant({
   const { loading, error, data } = useQuery(AllPupilsDocument);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error : {error.message}</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <Select
